@@ -59,14 +59,14 @@ and have deterministic environment with wifi interface.
 ## Environment variables
 
 * **INTERFACE**: name of the interface to use for wifi access point (default: wlan0)
-* **OUTGOING**: outgoing network interface (default: eth0)
+* **OUTGOINGS**: outgoing network interface (default: eth0)
 * **CHANNEL**: WIFI channel (default: 6)
 * **SUBNET**: Network subnet (default: 192.168.254.0)
 * **AP_ADDR**: Access point address (default: 192.168.254.1)
 * **SSID**: Access point SSID (default: docker-ap)
 * **WPA_PASSPHRASE**: WPA password (default: passw0rd)
 * **HW_MODE**: WIFI mode to use (default: g) 
-* **DRIVER**: WIFI driver to use (default: nl80211)
+
 * **HT_CAPAB**: WIFI HT capabilities for 802.11n (default: [HT40-][SHORT-GI-20][SHORT-GI-40]) 
 * **MODE**: Mode to run in guest/host (default: host)
 
