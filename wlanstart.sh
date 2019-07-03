@@ -39,7 +39,7 @@ fi
 if [ ! -f "/etc/hostapd.conf" ] ; then
     cat > "/etc/hostapd.conf" <<EOF
 interface=${INTERFACE}
-driver=${DRIVER}
+#driver=${DRIVER}
 ssid=${SSID}
 hw_mode=${HW_MODE}
 channel=${CHANNEL}
@@ -48,12 +48,14 @@ wpa_passphrase=${WPA_PASSPHRASE}
 wpa_key_mgmt=WPA-PSK
 # TKIP is no secure anymore
 #wpa_pairwise=TKIP CCMP
-wpa_pairwise=CCMP
+wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 wpa_ptk_rekey=600
 ieee80211n=1
 ht_capab=${HT_CAPAB}
 wmm_enabled=1 
+auth_algs=1
+macaddr_acl=0
 EOF
 
 fi
