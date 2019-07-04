@@ -74,7 +74,7 @@ ip addr add ${AP_ADDR}/24 dev ${INTERFACE}
 echo "NAT settings ip_dynaddr, ip_forward"
 
 for i in ip_dynaddr ip_forward ; do 
-  if [ $(cat /proc/sys/net/ipv4/$i) ]; then
+  if [ $(cat /proc/sys/net/ipv4/$i) == 1 ]; then
     echo $i already 1 
   else
     echo "1" > /proc/sys/net/ipv4/$i
@@ -105,6 +105,10 @@ option subnet-mask 255.255.255.0;
 option routers ${AP_ADDR};
 subnet ${SUBNET} netmask 255.255.255.0 {
   range ${SUBNET::-1}100 ${SUBNET::-1}200;
+}
+host ccnx1 {
+hardware ethernet 00:00:00:00:00:00;
+fixed-address ${SUBNET::-1}50;
 }
 EOF
 
